@@ -6,6 +6,8 @@ import hello.advanced.trace.hellotrace.HelloTraceV2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import static hello.advanced.util.TimeUtil.sleep;
+
 @Repository
 @RequiredArgsConstructor
 public class OrderRepositoryV2 {
@@ -25,14 +27,6 @@ public class OrderRepositoryV2 {
         } catch (Exception e) {
             trace.exception(status, e);
             throw e;
-        }
-    }
-
-    private void sleep(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }

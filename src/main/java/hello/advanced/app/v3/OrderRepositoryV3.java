@@ -5,6 +5,8 @@ import hello.advanced.trace.logtrace.LogTrace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import static hello.advanced.util.TimeUtil.sleep;
+
 @Repository
 @RequiredArgsConstructor
 public class OrderRepositoryV3 {
@@ -24,14 +26,6 @@ public class OrderRepositoryV3 {
         } catch (Exception e) {
             trace.exception(status, e);
             throw e;
-        }
-    }
-
-    private void sleep(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
