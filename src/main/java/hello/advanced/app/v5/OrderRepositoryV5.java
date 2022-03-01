@@ -14,8 +14,7 @@ public class OrderRepositoryV5 {
     public OrderRepositoryV5(LogTrace trace) {
         this.template = new TraceTemplate(trace);
     }
-
-
+    
     public void save(String itemId) {
 
         template.execute("OrderRepository.save()", () -> {
